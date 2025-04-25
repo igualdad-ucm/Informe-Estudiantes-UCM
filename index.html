@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Distribución de estudiantes por identidad de género UCM</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+    }
+    header {
+      background: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #eee;
+      padding: 10px 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav button {
+      padding: 10px 20px;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    nav button:hover {
+      background: #0055aa;
+    }
+    section {
+      display: none;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    section.active {
+      display: block;
+    }
+    img {
+      max-width: 90%;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    a button {
+      background-color: #0077cc;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    a button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Tablas de distribución de la identidad de género de los estudiantes UCM</h1>
+</header>
+
+<nav>
+  <button onclick="showTable('tabla1')">Total estudiantes por identidad de género</button>
+  <button onclick="showTable('tabla2')">Porcentaje estudiantes por identidad de género</button>
+  <button onclick="showTable('tabla3')">Porcentaje estudiantes por tipo de estudios</button>
+  <button onclick="showTable('tabla4')">Porcentaje estudiantes por tipo de estudios e identidad de género</button>
+  <button onclick="showTable('tabla5')">Porcentaje estudiantes por rama e identidad de género</button>
+  <button onclick="showTable('tabla6')">Porcentaje estudiantes por centro e identidad de género</button>
+</nav>
+
+<section id="tabla1" class="active">
+  <img src="Tablas/tabla1.png" alt="Tabla 1">
+  <br><br>
+  <a href="csv/TotalEstudiantesPorGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+</section>
+
+
+<section id="tabla2">
+  <img src="Tablas/tabla2.png" alt="Tabla 2">
+  <br><br>
+  <a href="csv/PCTEstudiantesPorGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+</section>
+
+<section id="tabla3">
+  <img src="Tablas/tabla3.png" alt="Tabla 3">
+  <br><br>
+  <a href="csv/PCTEstudiantesPorTipoEstudios.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+</section>
+
+<section id="tabla4">
+  <img src="Tablas/tabla4.png" alt="Tabla 4">
+  <br><br>
+  <a href="csv/PCTEstudiantesPorTipoEstudiosYGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+</section>
+
+<section id="tabla5">
+  <img src="Tablas/tabla5.png" alt="Tabla 5">
+  <br><br>
+  <a href="csv/PCTEstudiantesPorRamaYGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+</section>
+
+<section id="tabla6">
+  <img src="Tablas/tabla6.png" alt="Tabla 6">
+  <br><br>
+  <a href="csv/PCTEstudiantesPorCentroYGenero.csv" download>
+    <button>Descargar CSV</button>
+  </a>
+</section>
+
+<script>
+  function showTable(id) {
+    // Ocultar todas las secciones
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    // Mostrar solo la seleccionada
+    document.getElementById(id).classList.add('active');
+    // Subir al top automáticamente
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
+
